@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Exam</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Create New Exam</h1>
+        <br />
+     		<form action="#" th:action="@{/saveExam}" method=post
+			th:object="${user}">
+			
+			<div th:object="${exam}">
+
+				<table>
+					<tr>
+						<td>Name:</td>
+						<td><input type="text" th:field="*{Exam_Name}" /></td>
+					</tr>
+					<tr>
+						<td>Time:</td>
+						<td><input type="text" name="sss"  /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><button type="submit">Save</button></td>
+					</tr>
+					<tr>
+						<td colspan="2"><a href="/exampage"><button >Show List</button></a></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+    </div>
+</body>
+</html>

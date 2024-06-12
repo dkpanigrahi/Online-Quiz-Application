@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="utf-8" />
+<title>Admin Manager</title>
+</head>
+<body>
+	<h3 th:inline="text">welcome [[${#httpServletRequest.remoteUser}]]</h3>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Logout"></input>
+	</form>
+	<br>
+
+	<!-- <div>
+		<h3>Exam search</h3>
+	</div> -->
+	<!-- <form th:object="${exam}" method="get" th:action="@{/CandidateList}">
+		<div>
+			<label for="subject">Subject: </label> <input type="text"
+				name="Exam_Name" th:value="${exam}"> <input type="submit"
+				value="Search">
+		</div>
+	</form> -->
+
+	<div align="center">
+		<h1>Candidate List</h1>
+		<br> <a href="/addExam"></a> <br /> <br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Exam ID</th>
+					<th>Exam Name</th>
+					<th>User ID</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="list : ${listOfExams}">
+					<td th:text="${list.Exam_Id}">ID</td>
+					<td th:text="${list.Exam_Name}">Name</td>
+					<td th:text="${list.user1.user_Id}">Name</td>
+					<td> <a
+						th:href="@{'/deleteExam/' + ${list.Exam_Id}}">Delete</a>
+						</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="utf-8" />
+<title>Admin Manager</title>
+</head>
+<body>
+	<h3 th:inline="text">welcome [[${#httpServletRequest.remoteUser}]]</h3>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Logout"></input>
+	</form>
+	<br>
+
+
+
+	<div align="center">
+		<h1>ExamList</h1>
+		<br> <a href="/addExam">Create New Exam </a> <br /> <br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Exam ID</th>
+					<th>Exam Name</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="list : ${Elist}">
+					<td th:text="${list.Exam_Id}">ID</td>
+					<td th:text="${list.Exam_Name}">Name</td>
+					<td><a th:href="@{'/editExam/' + ${list.Exam_Id}}">Edit</a>
+						&nbsp;&nbsp;&nbsp; <a
+						th:href="@{'/deleteExam/' + ${list.Exam_Id}}">Delete</a>
+
+						&nbsp;&nbsp;&nbsp; <a th:href="@{'/question/'+ ${list.Exam_Id}}">Add Question</a></td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

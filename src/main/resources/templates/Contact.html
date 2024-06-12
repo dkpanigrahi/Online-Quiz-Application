@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous">
+</script>
+<style type="text/css">
+body {
+	overflow-x: hidden;
+	height: 100%;
+	/* background-color: #B0BEC5; */
+	background-repeat: no-repeat
+}
+
+.card0 {
+	/* box-shadow: 0px 4px 8px 0px #757575; */
+	border-radius: 0px
+}
+
+.card2 {
+	margin: 70px 70px
+}
+
+.logo {
+	width: 200px;
+	height: 100px;
+	margin-top: 20px;
+	margin-left: 35px
+}
+
+.image {
+	width: 360px;
+	height: 280px
+}
+
+.border-line {
+	border-right: 1px solid #EEEEEE
+}
+
+
+.text-sm {
+	font-size: 14px !important
+}
+
+::placeholder {
+	color: #BDBDBD;
+	opacity: 1;
+	font-weight: 300
+}
+
+:-ms-input-placeholder {
+	color: #BDBDBD;
+	font-weight: 300
+}
+
+::-ms-input-placeholder {
+	color: #BDBDBD;
+	font-weight: 300
+}
+
+input, textarea {
+	padding: 10px 12px 10px 12px;
+	border: 1px solid lightgrey;
+	border-radius: 2px;
+	margin-bottom: 5px;
+	margin-top: 2px;
+	width: 100%;
+	box-sizing: border-box;
+	color: #2C3E50;
+	font-size: 14px;
+	letter-spacing: 1px
+}
+
+input:focus, textarea:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: 1px solid #304FFE;
+	outline-width: 0
+}
+
+button:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	outline-width: 0
+}
+
+a {
+	color: inherit;
+	cursor: pointer
+}
+
+.btn-blue {
+	background-color: #1A237E;
+	width: 150px;
+	color: #fff;
+	border-radius: 2px
+}
+
+.btn-blue:hover {
+	background-color: #000;
+	cursor: pointer
+}
+
+.bg-blue {
+	color: #fff;
+	background-color: #1A237E
+}
+
+@media screen and (max-width: 991px) {
+	.logo {
+		margin-left: 0px
+	}
+	.image {
+		width: 300px;
+		height: 220px
+	}
+	.border-line {
+		border-right: none
+	}
+	.card2 {
+		border-top: 1px solid #EEEEEE !important;
+		margin: 0px 15px
+	}
+}
+</style>
+</head>
+<body>
+
+	<!-- Navbar-->
+	<div id="navbar">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+				<a class="navbar-brand" href=""><b>Examinia</b></a>
+			</nav>
+		</header>
+	</div>
+<body>
+
+	<div class="card card0 border-0">
+
+		<div class="row d-flex">
+			<div class="col-lg-6">
+				<div class="card1 pb-5">
+
+					<div class="row px-3 justify-content-center mt-0 mb-5 border-line">
+						<div class="px-4 py-5">
+						<br><br><br>
+							<h3>
+							<b>Contact</b>
+						</h3>
+						<br>
+								<div class ="contact-detail">
+								<div class="icons">
+								<i class="fas fa-map-marker-alt"><img alt="" src=""></i>
+								</div>
+									<div class="contact-title">
+									<h5>Office Address</h5>
+									<p>204/2, Skylon Tower, office No-3, Kalyan East-421306, Dist-Thane,Maharashtra, India.</p>
+									</div>							
+								</div>
+								
+								<div class ="contact-detail">
+								<div class="icons">
+								<i class="fa fa-mobile-android-alt"></i>
+								</div>
+									<div class="contact-title">
+									<h5>Mobile</h5>
+									<p>+91 <a href="" style="color: green;">7208733116</a></p>
+									<p>+91 <a href="" style="color: green;">7021795417</a></p>
+									</div>				
+								</div>
+								
+								<div class ="contact-detail">
+								<div class="icons">
+								<i class="fa fa-envelope-open-text"></i>
+								</div>
+									<div class="contact-title">
+									<h5>Email</h5>
+									<p> <a href="" >akshay@examinia.com</a></p>
+									<p> <a href="" >hitesh@examinia.com</a></p>
+									</div>		
+								</div>
+								
+								<div class ="contact-detail">
+								<div class="icons">
+								<i class="fa fa-globe-asia"></i>
+								</div>
+									<div class="contact-title">
+									<h5>Web</h5>
+									<p>www.examinia.com</p>
+									</div>		
+								</div>
+						</div>
+						<br><br><br>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+
+				<div class="card2 card border-1 shadow-lg px-4 py-5">
+					<form method="post" th:action="@{/savefeedback}"
+						class="form-signin">
+						<h3>
+							<b>Feedback Form</b>
+						</h3>
+						<br>
+						<div class="row px-3">
+							<label class="mb-1">
+								<h6 class="mb-0 text-sm">Name</h6>
+							</label> <input class="mb-4" type="text" name="name"
+								placeholder="Enter your name" autofocus />
+						</div>
+
+
+
+						<div class="row px-3">
+							<label class="mb-1">
+								<h6 class="mb-0 text-sm">Mobilenumber</h6>
+							</label> <input class="mb-4" type="text" name="mobilenumber"
+								placeholder="Enter your mobile_number" autofocus />
+						</div>
+
+						<div class="row px-3">
+							<label class="mb-1">
+								<h6 class="mb-0 text-sm">Subject</h6>
+							</label> <input class="mb-4" type="text" name="subject"
+								placeholder="Enter subject" autofocus />
+						</div>
+
+						<div class="row px-3">
+							<label class="mb-1"> </label>
+							<h6 class="mb-0 text-sm">Message</h6>
+							<textarea class="form-control" name="message" id="message"
+								rows="5" placeholder="Enter message" required="required"></textarea>
+						</div>
+						<br> <br>
+
+						<div class="row mb-3 px-3">
+							<button type="submit" class="btn btn-blue text-center">Submit</button>
+						</div>
+					</form>
+					<div class="row mb-4 px-3">
+						<small class="font-weight-bold">Home page.. <a
+							class="text-danger " href="/">home</a></small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid p-1 bg-blue text-center text-white" >
+			<p>@copyright Examinia</p>
+	</div>
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
